@@ -54,7 +54,6 @@ address {
 }
 
 /* Form */
-
 input, textarea, button, select {
 	font-family: inherit;
     font-size: inherit;
@@ -62,7 +61,7 @@ input, textarea, button, select {
     background-color: transparent;
 }
 
-input::-ms-clear {
+input::-ms-clear {  
 	display: none;
 }
 
