@@ -2,7 +2,7 @@ const User = require('../models/Users')
 
 const registerController = {
     showRegisterPage: (req, res) => {
-        res.render('register'); // Отображение страницы регистрации
+        res.render('register', { username: req.session.username || null });      
     },
 
     // Обработка данных регистрации (POST-запрос)

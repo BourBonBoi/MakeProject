@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
+const aboutRouter = require('./routes/about');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -43,6 +45,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/about', aboutRouter);
 
 // Запуск сервера
 app.listen(PORT, () => {

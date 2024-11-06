@@ -12,12 +12,12 @@ const loginController = {
         try {
             const user = await User.findOne({ email });
             if (!user) {
-                return res.status(401).send('Пользователь не найден');
+                return res.status(401).json({ message: 'Пользователь не найден' });
             }
 
             const isMatch = await bcrypt.compare(password, user.password);
             if (!isMatch) {
-                return res.status(401).send('Неверный пароль');
+                return res.status(401).json({ message: 'Неверный пароль' });
             }
 
             req.session.username = user.username; // Сохранение имени пользователя в сессии

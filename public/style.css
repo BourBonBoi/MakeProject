@@ -13,12 +13,13 @@
 }
 
 .site-title {
+    text-decoration: none;
     font-size: 24px;
     font-weight: bold;
     padding-top: 6px;
 }
 .hello-user{
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .right-nav {
@@ -104,4 +105,41 @@
 
 .form-button:active {
     transform: scale(0.95); 
+}
+
+
+.about-section, .team-section, .contact-section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-title, .team-title, .contact-title {
+    font-size: 28px;
+    color: #3d2a2b;
+}
+
+.about-description {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.team-photo {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.team-info h3 {
+    margin: 0;
+    font-size: 20px;
 }

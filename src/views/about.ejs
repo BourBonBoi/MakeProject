@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>О нас</title>
+</head>
+<body>
+    <%- include('partials/header', { username: username }) %>
+    <main>
+        <section class="about-section">
+            <h2 class="about-title">О нас</h2>
+            <p class="about-description">В современном бизнесе, где скорость и эффективность играют решающую роль, компании сталкиваются с необходимостью внедрения прогрессивных инструментов для управления проектами. Эти инструменты помогают не только отслеживать прогресс выполнения задач, но и оптимизировать распределение ресурсов среди участников команды. Прозрачность в работе и четкое понимание ответственности каждого участника способствуют повышению командной продуктивности. При этом доступ к актуальной информации в режиме реального времени позволяет быстро реагировать на изменения и принимать обоснованные решения. В итоге, благодаря таким решениям, компания может эффективно достигать своих бизнес-целей, значительно улучшая коммуникацию и сотрудничество внутри команды.
+            </p>
+        </section>
+
+        <section class="team-section">
+            <h2 class="team-title">Наша команда</h2>
+            <div class="team-member">
+                <img src="img/ava.png" alt="Член команды 1" class="team-photo">
+                <div class="team-info">
+                    <h3>Заглушка</h3>
+                    <p>Заглушка</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2 class="contact-title">Свяжитесь с нами</h2>
+            <p>Если у вас есть вопросы, не стесняйтесь обращаться к нам:</p>
+            <p>Email: artemmine9292@gmail.com</p>
+            <p>Телефон: +7 (000) 000-00-00</p>
+        </section>
+    </main>
+</body>
+</html>
