@@ -3,7 +3,8 @@ const path = require('path');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index'); 
+    const username = req.session.username || 'Гость';
+    res.render('index', { username });
 });
 
 module.exports = router;

@@ -15,8 +15,10 @@
 .site-title {
     font-size: 24px;
     font-weight: bold;
-    margin: 0; /* Убирает отступы */
-    padding-right: 5px; /* Небольшой отступ справа для отделения от кнопок */
+    padding-top: 6px;
+}
+.hello-user{
+    font-size: 18px;
 }
 
 .right-nav {

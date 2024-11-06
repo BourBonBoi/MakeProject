@@ -7,7 +7,7 @@
     <title>Регистрация</title>
 </head>
 <body>
-    <%- include('partials/header') %>
+    <%- include('partials/header', { username: null }) %> 
     <h1 class="form-title">Регистрация</h1>
     <form class="base-form" action="/register" method="POST">
         <label for="username" class="form-label">Имя пользователя:</label>

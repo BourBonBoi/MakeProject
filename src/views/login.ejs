@@ -7,7 +7,7 @@
     <title>Вход</title>
 </head>
 <body>
-    <%- include('partials/header') %>
+    <%- include('partials/header', { username: username }) %>
     <h1 class="form-title">Вход</h1>
     <form class="base-form" action="/login" method="POST">
         <label for="email" class="form-label">Электронная почта:</label>

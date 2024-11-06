@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 
 const bodyParser = require('body-parser');
@@ -26,6 +27,14 @@ mongoose.connect('mongodb://localhost:27017/MakeProject', {
 app.use(express.static('public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// Использование сессий
+app.use(session({
+    secret: '228',
+    resave: false,
+    saveUninitialized: true
+}));
+
 
 // Middleware для парсинга данных из форм
 app.use(express.urlencoded({ extended: true }));
