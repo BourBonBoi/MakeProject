@@ -1,29 +1,15 @@
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
-
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-
+const config = require('./config/config');
+const mongoose = require('./config/db');  
 const indexRouter = require('./routes/index');
 const registerRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const aboutRouter = require('./routes/about');
 
-
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Подключение к MongoDB
-mongoose.connect('mongodb://localhost:27017/MakeProject', {
-
-})
-.then(() => {
-    console.log('Успешно подключено к MongoDB');
-})
-.catch((error) => {
-    console.error('Ошибка подключения к MongoDB:', error);
-});
 
 // Поддержка статических файлов
 app.use(express.static('public'));
@@ -32,7 +18,7 @@ app.set('view engine', 'ejs');
 
 // Использование сессий
 app.use(session({
-    secret: '228',
+    secret: config.sessionSecret,
     resave: false,
     saveUninitialized: true
 }));
@@ -48,6 +34,6 @@ app.use('/login', loginRouter);
 app.use('/about', aboutRouter);
 
 // Запуск сервера
-app.listen(PORT, () => {
-    console.log(`Сервер запущен на http://localhost:${PORT}`);
+app.listen(config.port, () => {
+    console.log(`Сервер запущен на http://localhost:${config.port}`);
 });
