@@ -4,10 +4,13 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const config = require('./config/config');
 const mongoose = require('./config/db');  
-const indexRouter = require('./routes/index');
-const registerRouter = require('./routes/register');
-const loginRouter = require('./routes/login');
-const aboutRouter = require('./routes/about');
+
+// Руты для использования в маршрутах
+const indexRouter = require('./routes/indexRouter');
+const registerRouter = require('./routes/registerRouter');
+const loginRouter = require('./routes/loginRouter');
+const aboutRouter = require('./routes/aboutRouter');
+const usersRouter = require('./routes/usersRouter');
 
 const app = express();
 
@@ -23,8 +26,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-
-// Middleware для парсинга данных из форм
+//Middleware для парсинга данных из форм
 app.use(express.urlencoded({ extended: true }));
 
 // Использование маршрутов
@@ -32,6 +34,8 @@ app.use('/', indexRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/about', aboutRouter);
+app.use('/users', usersRouter);
+
 
 // Запуск сервера
 app.listen(config.port, () => {

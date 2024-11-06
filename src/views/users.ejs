@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Пользователи</title>
+</head>
+<body>
+    <%- include('partials/header', { username: username }) %> 
+    <section class="team-section">
+        <h2 class="team-title">Наша команда</h2>
+        <% users.forEach(user => { %>
+            <div class="team-member">
+                <img src="img/ava.png" alt="userSample" class="team-photo">
+                <div class="team-info">
+                    <h3><%= user.username %></h3>
+                    <p><%= user.email %></p>
+                    <p>userRoleSample</p> <!-- Укажите роль, если у вас есть поле для этого -->
+                </div>
+            </div>
+        <% }) %>
+    </section>
+</body>
+</html>
